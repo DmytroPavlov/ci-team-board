@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProjectTileComponent } from 'libs/cdk/src/lib/project-tile/components/project-tile.component';
 
 @Component({
   selector: 'ci-team-board-root',

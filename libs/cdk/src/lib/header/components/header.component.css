@@ -1,0 +1,29 @@
+.project-tile {
+    display: inline-flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    margin: 1px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-tile:hover {
+    background: yellow;
+}
+
+.succeeded {
+    background: green;
+}
+
+.failed {
+    background: red;
+}
+
+.canceled {
+    background: grey;
+}
+
+.running {
+    background: blue;
+}
