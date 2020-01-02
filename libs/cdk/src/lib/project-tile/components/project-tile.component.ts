@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 enum ProjectTileStatus {
   succeeded,
   failed,
