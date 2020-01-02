@@ -13,6 +13,9 @@
     },
     "ci-team-board": {
       "tags": []
+    },
+    "cdk": {
+      "tags": []
     }
   }
 }

@@ -123,6 +123,31 @@
           }
         }
       }
+    },
+    "cdk": {
+      "root": "libs/cdk",
+      "sourceRoot": "libs/cdk/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/cdk/tsconfig.lib.json",
+              "libs/cdk/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/cdk/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/cdk/jest.config.js",
+            "tsConfig": "libs/cdk/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {

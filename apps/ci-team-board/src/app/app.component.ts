@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectTileComponent } from 'libs/cdk/src/lib/project-tile/components/project-tile.component';
 
 @Component({
   selector: 'ci-team-board-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ci-team-board';
+  projects: object[] = [];
+  constructor() {
+    for (let i = 0; i < 150; i++) {
+      this.projects.push({
+        name: `lib.studio-free.project${i}`
+      })
+    }
+  }
 }
