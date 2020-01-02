@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderModule, ProjectTileModule } from '@ci-team-board/cdk';
+import { HeaderModule, ProjectTileModule, ProjectsGridModule } from '@ci-team-board/cdk';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     HeaderModule,
     ProjectTileModule,
+    ProjectsGridModule,
     BrowserAnimationsModule
   ],
   providers: [],

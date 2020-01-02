@@ -9,21 +9,21 @@
 }
 
 .project-tile:hover {
-    background: yellow;
+    background: #ffeb3b;
 }
 
 .succeeded {
-    background: green;
+    background: #4caf50;
 }
 
 .failed {
-    background: red;
+    background: #f44336;
 }
 
 .canceled {
-    background: grey;
+    background: #607d8b;
 }
 
 .running {
-    background: blue;
+    background: #00bcd4;
 }

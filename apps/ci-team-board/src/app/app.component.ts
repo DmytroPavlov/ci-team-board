@@ -7,12 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ci-team-board';
-  projects: object[] = [];
-  constructor() {
-    for (let i = 0; i < 150; i++) {
-      this.projects.push({
-        name: `lib.studio-free.project${i}`
-      })
-    }
-  }
 }

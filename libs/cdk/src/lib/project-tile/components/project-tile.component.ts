@@ -21,7 +21,7 @@ export class ProjectTileComponent implements OnInit {
   name: string = "";
 
   @Input()
-  status: ProjectTileStatus = ProjectTileStatus.succeeded;
+  status: number = ProjectTileStatus.succeeded;
 
   classes: Object = {
     "project-tile": true,
