@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderModule, ProjectTileModule } from '@ci-team-board/cdk';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     HeaderModule,
-    ProjectTileModule
+    ProjectTileModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
