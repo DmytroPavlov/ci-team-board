@@ -8,7 +8,8 @@ enum ProjectTileStatus {
   running
 };
 
-class Project {
+interface Project {
+  id: string;
   name: string;
   status: ProjectTileStatus;
 };
@@ -22,9 +23,13 @@ export class ProjectTileComponent implements OnInit {
 
   constructor() {}
   
-  @Input() project: Project = new Project();
+  @Input() project: Project;
 
   classes: Object;
+
+  onClick() {
+    console.log(this.project.id);
+  }
 
   ngOnInit() {
     this.classes = {

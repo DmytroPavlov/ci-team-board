@@ -13,6 +13,7 @@ export class ProjectsGridComponent implements OnInit {
   constructor() { 
     for (let i = 0; i < 30; i++) {
       this.projects.push({
+        id: Math.random(),
         name: `lib.studio-free.project-${i}`,
         status: this.getRandomIntInclusive(0, 3)
       })
