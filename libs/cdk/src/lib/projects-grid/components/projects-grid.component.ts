@@ -11,13 +11,6 @@ export class ProjectsGridComponent implements OnInit {
   projects: Object[] = [];
 
   constructor() { 
-    for (let i = 0; i < 30; i++) {
-      this.projects.push({
-        id: Math.random(),
-        name: `lib.studio-free.project-${i}`,
-        status: this.getRandomIntInclusive(0, 3)
-      })
-    }
   }
 
   private getRandomIntInclusive(min, max): number {
@@ -27,6 +20,13 @@ export class ProjectsGridComponent implements OnInit {
   }
 
   ngOnInit() {
+    for (let i = 0; i < this.getRandomIntInclusive(7, 111); i++) {
+      this.projects.push({
+        id: Math.random(),
+        name: `lib.studio-free.project-${i}`,
+        status: this.getRandomIntInclusive(0, 3)
+      })
+    }
   }
 
 }
