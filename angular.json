@@ -26,7 +26,6 @@
               "apps/ci-team-board/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/ci-team-board/src/styles.scss"
             ],
             "scripts": []
@@ -174,6 +173,9 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@schematics/angular:component": {
+      "styleext": "scss"
     }
   },
   "defaultProject": "ci-team-board"

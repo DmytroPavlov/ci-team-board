@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-projects-grid',
   templateUrl: './projects-grid.component.html',
-  styleUrls: ['./projects-grid.component.css']
+  styleUrls: ['./projects-grid.component.scss']
 })
 export class ProjectsGridComponent implements OnInit {
 
   projects: Object[] = [];
 
-  constructor() { 
+  constructor() {
     for (let i = 0; i < 10; i++) {
       this.projects.push({
         name: `lib.studio-free.project-${i}`,
