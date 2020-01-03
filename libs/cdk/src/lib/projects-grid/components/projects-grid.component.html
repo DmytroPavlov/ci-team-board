@@ -1,2 +1,7 @@
-<app-project-tile *ngFor="let project of projects" name="{{ project.name }}" status="{{ project.status }}">
-</app-project-tile>
+<div class="projects-grid">
+  <app-project-tile
+    *ngFor="let project of projects"
+    [project]="project"
+  >
+  </app-project-tile>
+</div>
