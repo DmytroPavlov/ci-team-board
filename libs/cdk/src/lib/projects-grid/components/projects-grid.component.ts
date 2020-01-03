@@ -23,7 +23,7 @@ export class ProjectsGridComponent implements OnInit {
     for (let i = 0; i < this.getRandomIntInclusive(7, 111); i++) {
       this.projects.push({
         id: Math.random(),
-        name: `lib.studio-free.project-${i}`,
+        name: `type.scope.project-${i}`,
         status: this.getRandomIntInclusive(0, 3)
       })
     }
