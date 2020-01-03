@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-projects-grid',
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsGridComponent implements OnInit {
 
+  @Input()
   projects: Object[] = [];
 
   constructor() { 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
       this.projects.push({
         name: `lib.studio-free.project-${i}`,
         status: this.getRandomIntInclusive(0, 3)

@@ -8,6 +8,11 @@ enum ProjectTileStatus {
   running
 };
 
+class Project {
+  name: string;
+  status: ProjectTileStatus;
+};
+
 @Component({
   selector: 'app-project-tile',
   templateUrl: './project-tile.component.html',
@@ -15,23 +20,20 @@ enum ProjectTileStatus {
 })
 export class ProjectTileComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
   
-  @Input()
-  name: string = "";
+  @Input() project: Project = new Project();
 
-  @Input()
-  status: number = ProjectTileStatus.succeeded;
-
-  classes: Object = {
-    "project-tile": true,
-    "succeeded": this.status === ProjectTileStatus.succeeded,
-    "failed": this.status === ProjectTileStatus.failed,
-    "canceled": this.status === ProjectTileStatus.canceled,
-    "running": this.status === ProjectTileStatus.running
-  };
+  classes: Object;
 
   ngOnInit() {
+    this.classes = {
+      "project-tile": true,
+      "succeeded": this.project.status === ProjectTileStatus.succeeded,
+      "failed": this.project.status === ProjectTileStatus.failed,
+      "canceled": this.project.status === ProjectTileStatus.canceled,
+      "running": this.project.status === ProjectTileStatus.running
+    };
   }
 
 }

@@ -1,29 +1,35 @@
-.project-tile {
-    display: inline-flex;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1vw;
+:host() {
+    display: inline-block;
     margin: 1px;
-    padding: 10px;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    width: calc(20% - 2px);
+    text-align: center;
+}
+
+.mat-card-content {
+    font-size: 8px;
+    color: white;
 }
 
 .project-tile:hover {
-    background: #ffeb3b;
+    background: #c8b900;
 }
 
 .succeeded {
-    background: #4caf50;
+    background: #087f23;
 }
 
 .failed {
-    background: #f44336;
+    background: #ba000d;
 }
 
 .canceled {
-    background: #607d8b;
+    background: #34515e;
 }
 
 .running {
-    background: #00bcd4;
+    background: #007ac1;
 }
