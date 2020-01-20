@@ -1,0 +1,21 @@
+{
+  "npmScope": "ci-team-board",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "ci-team-board-e2e": {
+      "tags": ["type:e2e"]
+    },
+    "ci-team-board": {
+      "tags": ["type:app"]
+    },
+    "board": {
+      "tags": ["type:feature"]
+    }
+  }
+}

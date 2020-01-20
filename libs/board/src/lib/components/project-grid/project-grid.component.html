@@ -1,0 +1,27 @@
+<mat-sidenav-container
+  (backdropClick)="close('backdrop')"
+  style="height: 100%;"
+>
+  <mat-sidenav-content>
+    <app-project-tile
+      *ngFor="let project of projects"
+      [project]="project"
+      (click)="selectProject(project)"
+    >
+    </app-project-tile>
+  </mat-sidenav-content>
+  <mat-sidenav
+    #sidenav
+    (keydown.escape)="close('escape')"
+    disableClose
+    position="end"
+    style="width: 80%;"
+  >
+    <app-project-details
+      *ngIf="selectedProject != null"
+      [project]="selectedProject"
+      style="width: calc(100% - 2px);"
+    ></app-project-details>
+    <!-- <button mat-button (click)="close()">close</button> -->
+  </mat-sidenav>
+</mat-sidenav-container>
