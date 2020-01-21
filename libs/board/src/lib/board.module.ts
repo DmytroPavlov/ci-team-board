@@ -12,10 +12,12 @@ import { MomentModule } from 'ngx-moment';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
-import { GravatarModule } from  'ngx-gravatar';
-import {MatTableModule} from '@angular/material/table';
+import { GravatarModule } from 'ngx-gravatar';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { BoardRoutingModule } from './board-routing.module';
 import {
@@ -52,7 +54,9 @@ import {
     MatListModule,
     MatBadgeModule,
     GravatarModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatTooltipModule
   ],
   exports: [ProjectGridComponent],
   providers: []

@@ -16,20 +16,60 @@
         <mat-expansion-panel-header>
           <mat-panel-title> #{{ projectRun.id }} </mat-panel-title>
           <mat-panel-title>
+            {{ projectRun.state }}
+          </mat-panel-title>
+          <mat-panel-title>
             {{ projectRun.result }}
           </mat-panel-title>
           <mat-panel-title>
             {{ projectRun.durationInMillis | amDuration: 'milliseconds' }}
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-chip-list>
-          <mat-chip
-            [color]="primary"
+
+        <mat-list>
+          <h2 mat-header>Pipeline</h2>
+          <mat-list-item
             *ngFor="let projectRunNode of _projectRunNodes | async"
           >
-            {{ projectRunNode.displayName }}
-          </mat-chip>
-        </mat-chip-list>
+            <mat-icon
+              mat-list-icon
+              *ngIf="projectRunNode.result == 'SUCCESS'"
+              matTooltip="{{ projectRunNode.result }}"
+            >
+              mood
+            </mat-icon>
+            <mat-icon
+              mat-list-icon
+              *ngIf="projectRunNode.result == 'FAILURE'"
+              matTooltip="{{ projectRunNode.result }}"
+            >
+              mood_bad
+            </mat-icon>
+            <mat-icon
+              mat-list-icon
+              *ngIf="!projectRunNode.result"
+              matTooltip="UNKNOWN"
+            >
+              sentiment_dissatisfied
+            </mat-icon>
+            <mat-icon
+              mat-list-icon
+              *ngIf="projectRunNode.state == 'FINISHED'"
+              matTooltip="{{ projectRunNode.state }}"
+            >
+              check_box
+            </mat-icon>
+            <mat-icon
+              mat-list-icon
+              *ngIf="projectRunNode.state != 'FINISHED'"
+              matTooltip="{{ projectRunNode.state }}"
+            >
+              check_box_outline_blank
+            </mat-icon>
+            <h3 mat-line>{{ projectRunNode.displayName }}</h3>
+          </mat-list-item>
+        </mat-list>
+
         <mat-tab-group>
           <mat-tab>
             <ng-template matTabLabel>
@@ -41,7 +81,13 @@
               </span>
             </ng-template>
             <ng-template matTabContent>
-              <table matSort (matSortChange)="sortData($event)">
+              <table>
+                <tr>
+                  <th>Avatar</th>
+                  <th>Author</th>
+                  <th>Commit message</th>
+                  <th>Affected</th>
+                </tr>
                 <tr *ngFor="let changeSet of projectRun.changeSet">
                   <td style="vertical-align: top;">
                     <img
@@ -58,11 +104,21 @@
                   </td>
                   <td style="vertical-align: top;">
                     <div *ngFor="let affectedPath of changeSet.affectedPaths">
-                      <span>- {{ affectedPath }}</span>
+                      <li>{{ affectedPath }}</li>
                     </div>
                   </td>
                 </tr>
               </table>
+            </ng-template>
+          </mat-tab>
+          <mat-tab>
+            <ng-template matTabLabel>
+              <span>
+                Log
+              </span>
+            </ng-template>
+            <ng-template matTabContent>
+
             </ng-template>
           </mat-tab>
         </mat-tab-group>
