@@ -1,8 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 import { Component, OnInit } from '@angular/core';
 import { Board } from '../../models';
 import { BoardService } from '../../services';
+import { AddBoardDialogComponent } from '../add-board-dialog/add-board-dialog.component';
+import { RemoveBoardDialogComponent } from '../remove-board-dialog/remove-board-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +21,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private _activateRoute: ActivatedRoute,
     private _boardService: BoardService,
+    private _dialog: MatDialog,
     private _router: Router
   ) { }
 
@@ -37,6 +41,29 @@ export class HeaderComponent implements OnInit {
     if (board) {
       this._router.navigate(['/Board/', board.id]);
     }
+  }
+
+  public addBoard() {
+    const dialogRef = this._dialog.open(AddBoardDialogComponent);
+    dialogRef.afterClosed().subscribe(board => {
+      if (board) {
+        this._boardService.add(board);
+        this.selectBoard(board);
+      }
+    });
+  }
+
+  public removeBoard() {
+    const selectedBoard = this.selectedBoard;
+    if (!selectedBoard) {
+      return;
+    }
+    const dialogRef = this._dialog.open(RemoveBoardDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this._boardService.remove(selectedBoard.id);
+      }
+    });
   }
 
 }

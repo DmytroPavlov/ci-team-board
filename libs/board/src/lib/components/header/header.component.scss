@@ -6,4 +6,12 @@
   background-color: #8d8d8d;
   color: white;
   justify-content: center;
+
+  .board-select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
 }

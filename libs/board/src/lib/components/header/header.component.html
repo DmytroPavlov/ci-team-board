@@ -1,13 +1,23 @@
 <mat-toolbar class="toolbar">
-  <span>{{selectedBoard?.name}}</span>
-  <span>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu" [overlapTrigger]="false" panelClass="board-menu-panel">
-      <button mat-menu-item *ngFor="let board of boards" (click)="selectBoard(board)">
-        <span>{{board.name}}</span>
+  <span class="board-select">
+    <span>{{selectedBoard?.name}}</span>
+    <span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
       </button>
-    </mat-menu>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false" panelClass="board-menu-panel">
+        <button mat-menu-item *ngFor="let board of boards" (click)="selectBoard(board)">
+          <span>{{board.name}}</span>
+        </button>
+      </mat-menu>
+    </span>
+  </span>
+  <span class="board-controls">
+    <button mat-icon-button (click)="addBoard()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button (click)="removeBoard()">
+      <mat-icon>remove</mat-icon>
+    </button>
   </span>
 </mat-toolbar>

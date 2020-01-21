@@ -16,16 +16,22 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { GravatarModule } from 'ngx-gravatar';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BoardRoutingModule } from './board-routing.module';
 import {
+  AddBoardDialogComponent,
   BoardComponent,
   HeaderComponent,
   ProjectGridComponent,
   ProjectTileComponent,
-  ProjectDetailsComponent
+  ProjectDetailsComponent,
+  RemoveBoardDialogComponent
 } from './components/';
 
 @NgModule({
@@ -34,7 +40,13 @@ import {
     HeaderComponent,
     ProjectGridComponent,
     ProjectTileComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    AddBoardDialogComponent,
+    RemoveBoardDialogComponent
+  ],
+  entryComponents: [
+    AddBoardDialogComponent,
+    RemoveBoardDialogComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +68,12 @@ import {
     GravatarModule,
     MatTableModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [ProjectGridComponent],
   providers: []

@@ -1,27 +1,48 @@
 {
   "boards": [{
     "id": 0,
+    "name": "Monorepa",
+    "projects": {
+      "type": 1,
+      "value": "(lib|app).*"
+    }
+  }, {
+    "id": 1,
     "name": "sdk",
     "projects": {
       "type": 1,
       "value": "(lib|app)\\.sdk.*"
     }
   }, {
-    "id": 1,
+    "id": 2,
     "name": "studio enterprise",
     "projects": {
       "type": 1,
       "value": "(lib|app)\\.studio-enterprise.*"
     }
   }, {
-    "id": 2,
+    "id": 3,
+    "name": "studio free",
+    "projects": {
+      "type": 1,
+      "value": "(lib|app)\\.studio-free.*"
+    }
+  }, {
+    "id": 4,
+    "name": "tracking",
+    "projects": {
+      "type": 1,
+      "value": "(lib|app)\\.tracking.*"
+    }
+  }, {
+    "id": 5,
     "name": "apps",
     "projects": {
       "type": 1,
       "value": "app\\..*\\..*"
     }
   }, {
-    "id": 3,
+    "id": 6,
     "name": "libs",
     "projects": {
       "type": 1,
